@@ -11,6 +11,7 @@ app.use(cors());
 app.use(express.json());
 
 app.use('/categories', categoryRoutes);
+console.log("Category routes registered at /categories");
 app.use('/recipes', recipeRoutes);
 
 sequelize.sync({ force: false }).then(() => {

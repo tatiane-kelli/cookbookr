@@ -12,8 +12,16 @@ const Recipe = sequelize.define('Recipe', {
     type: DataTypes.STRING,
     allowNull: false,
   },
+  portions: {
+    type: DataTypes.INTEGER,
+    allowNull: false,
+  },
   instructions: {
     type: DataTypes.TEXT,
+    allowNull: false,
+  },
+  ingredients: {
+    type: DataTypes.ARRAY(DataTypes.STRING),
     allowNull: false,
   },
   categoryId: {
@@ -22,6 +30,8 @@ const Recipe = sequelize.define('Recipe', {
       model: Category,
       key: 'categoryId',
     },
+    onDelete: 'CASCADE',
+    onUpdate: 'CASCADE',
   },
 });
 
