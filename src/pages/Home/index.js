@@ -1,6 +1,6 @@
 import React from 'react';
 import Header from '../../components/Header';
-import CarouselComponent from '../../components/Carousel';
+import SwiperComponent from '../../components/SwiperComponent';
 
 import {
   HomeContainer, 
@@ -17,7 +17,7 @@ function Home() {
         <MainContent>
           <WelcomeText>Bem-vindo!</WelcomeText>
           <WelcomeSubtitle>O que vamos cozinhar hoje?</WelcomeSubtitle>
-          <CarouselComponent />
+          <SwiperComponent />
         </MainContent>
       </HomeContainer>
     </>

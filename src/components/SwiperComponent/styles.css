@@ -1,0 +1,14 @@
+.categoriesSwiper {
+  margin-top: 30px;
+}
+
+.swiper-slide {
+  max-width: 100%;
+  transition: transform 0.5s ease-in-out;
+  position: relative;
+  margin: 0 10px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
