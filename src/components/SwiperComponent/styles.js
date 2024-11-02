@@ -6,9 +6,9 @@ export const SwiperImageContainer = styled.div`
   height: 400px;
   overflow: hidden;
 
-  &:hover div {
+  &:hover div:nth-child(2) {
     opacity: 0;
-    transition: transform 2s smooth;
+    transition: opacity 0.3s ease;
   }
 `;
 
@@ -25,6 +25,7 @@ export const Overlay = styled.div`
   right: 0;
   bottom: 0;
   background-color: rgba(0, 0, 0, 0.6);
+  transition: opacity 0.3s ease-in-out;
 `;
 
 export const SwiperSlideTitle = styled.div`
@@ -35,4 +36,8 @@ export const SwiperSlideTitle = styled.div`
   font-size: 2rem;
   padding: 5px 10px;
   font-weight: 200;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
 `;

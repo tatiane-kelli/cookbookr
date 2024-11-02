@@ -1,6 +1,7 @@
-import { React } from 'react';
+import React from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { FreeMode, Pagination, Autoplay } from 'swiper/modules';
+import { Link } from 'react-router-dom';
 import 'swiper/css';
 import 'swiper/css/free-mode';
 import 'swiper/css/pagination';
@@ -53,34 +54,33 @@ function SwiperComponent() {
 
   return (
     <Swiper
-    slidesPerView={5}
-    spaceBetween={15}
-    loop={true}
-    freeMode={true}
-    pagination={{
-      clickable: true,
-    }}
-    autoplay={{
-      delay: 2500,
-      disableOnInteraction: false,
-    }}
-    modules={[FreeMode, Pagination, Autoplay]}
-    className="categoriesSwiper"
+      slidesPerView={5}
+      spaceBetween={15}
+      loop={true}
+      freeMode={true}
+      pagination={{
+        clickable: true,
+      }}
+      autoplay={{
+        delay: 2500,
+        disableOnInteraction: false,
+      }}
+      modules={[FreeMode, Pagination, Autoplay]}
+      className="categoriesSwiper"
     >
       {slides.map((slide, index) => (
-        <SwiperSlide
-          key={index}
-          className="swiper-slide"
-        >
+        <SwiperSlide key={index} className="swiper-slide">
+          <Link to={slide.route} style={{ textDecoration: 'none' }}>
             <SwiperImageContainer>
               <SwiperSlideImage src={slide.imageUrl} alt={slide.title} />
               <Overlay />
+              <SwiperSlideTitle>{slide.title}</SwiperSlideTitle>
             </SwiperImageContainer>
-            <SwiperSlideTitle>{slide.title}</SwiperSlideTitle>
+          </Link>
         </SwiperSlide>
       ))}
     </Swiper>
   );
-};
+}
 
 export default SwiperComponent;
