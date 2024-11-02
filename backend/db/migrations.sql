@@ -13,7 +13,8 @@ CREATE TABLE IF NOT EXISTS recipe (
 );
 
 /* INSERTS */
-INSERT INTO categories (categoryName) VALUES
+
+INSERT INTO category (name) VALUES
   ('Tortas'),
   ('Bolos'),
   ('Sobremesas'),
@@ -25,7 +26,7 @@ INSERT INTO categories (categoryName) VALUES
 INSERT INTO recipe (name, categoryId, portions, ingredients, prepare)
 VALUES (
     'Carne com batata e creme de queijo',
-    (SELECT categoryId FROM category WHERE name = 'Refeições'),
+    (SELECT categoryId FROM category WHERE categoryId = 39),
     2, 
     ARRAY[
         '400g de contra filé', 
@@ -46,7 +47,7 @@ VALUES (
 INSERT INTO recipe (name, categoryId, portions, ingredients, prepare)
 VALUES (
     'Torta de Frango', 
-    (SELECT categoryId FROM category WHERE name = 'Tortas'), 
+    (SELECT categoryId FROM category WHERE categoryId = 36), 
     8,
     ARRAY[
         '1½ xícara de farinha de trigo', 
@@ -66,7 +67,7 @@ VALUES (
 INSERT INTO recipe (name, categoryId, portions, ingredients, prepare)
 VALUES (
     'Sopa de Tomate com Molho Pesto e Queijo Quente', 
-    (SELECT categoryId FROM category WHERE name = 'Refeições'), 
+    (SELECT categoryId FROM category WHERE categoryId = 39), 
     4, 
     ARRAY[
         '3 tomates italianos', 
@@ -97,7 +98,7 @@ VALUES (
 INSERT INTO recipe (name, categoryId, portions, ingredients, prepare)
 VALUES (
     'Cookie de Whey', 
-    (SELECT categoryId FROM category WHERE name = 'Biscoitos'), 
+    (SELECT categoryId FROM category WHERE categoryId = 42), 
     13, 
     ARRAY[
         '124 colheres de sopa de iogurte natural proteico', 
@@ -117,7 +118,7 @@ VALUES (
 INSERT INTO recipe (name, categoryId, portions, ingredients, prepare)
 VALUES (
     'Bolo de Cenoura', 
-    (SELECT categoryId FROM category WHERE name = 'Bolos'), 
+    (SELECT categoryId FROM category WHERE categoryId = 37), 
     15, 
     ARRAY[
         '300g de cenouras médias', 
@@ -137,7 +138,7 @@ VALUES (
 INSERT INTO recipe (name, categoryId, portions, ingredients, prepare)
 VALUES (
     'Pão de Mel', 
-    (SELECT categoryId FROM category WHERE name = 'Pães'), 
+    (SELECT categoryId FROM category WHERE categoryId = 41), 
     15,
     ARRAY[
         '250g de leite', 
@@ -157,7 +158,7 @@ VALUES (
 INSERT INTO recipe (name, categoryId, portions, ingredients, prepare)
 VALUES (
     'Suco Laramora', 
-    (SELECT categoryId FROM category WHERE name = 'Bebidas'), 
+    (SELECT categoryId FROM category WHERE categoryId = 40), 
     2,
     ARRAY[
         '200ml de suco de laranja',
@@ -170,7 +171,7 @@ VALUES (
 INSERT INTO recipe (name, categoryId, portions, ingredients, prepare)
 VALUES (
     'Suco de Abacaxi com Maracujá', 
-    (SELECT categoryId FROM category WHERE name = 'Bebidas'), 
+    (SELECT categoryId FROM category WHERE categoryId = 40), 
     3,
     ARRAY[
         '200g de abacaxi', 
@@ -181,12 +182,3 @@ VALUES (
     ], 
     'Bata todos os ingredientes em um liquidificador, peneire e sirva gelado.'
 );
-
-INSERT INTO categories (categoryName) VALUES
-  ('Tortas'),
-  ('Bolos'),
-  ('Sobremesas'),
-  ('Refeições'),
-  ('Sucos'),
-  ('Pães'),
-  ('Biscoitos');
